@@ -8,7 +8,7 @@ def fizzbuzz():
             print("Fizz ", end="")
             continue
         elif fizzbuzz % 5 == 0:
-            print ("Buzz ", end="")
+            print("Buzz ", end="")
             continue
         else:
             print("{} ".format(fizzbuzz), end="")
