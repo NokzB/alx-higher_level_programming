@@ -1,4 +1,3 @@
 #!/usr/bin/python3
 def no_c(my_string):
-    new_string = my_string.translate({ord('i'): None for i is 'cC'})
-    print(new_string)
+    return my_string.translate(None, "cC")
