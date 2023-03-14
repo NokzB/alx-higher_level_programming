@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 def no_c(my_string):
-    my_string.remove(c, C)
-    return my_string
+    new_string = my_string.translate({ord("c"): None, ord("C"): None})
+    print(new_string)
