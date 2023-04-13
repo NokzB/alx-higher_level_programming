@@ -3,7 +3,6 @@
 
 
 class Square:
-    """A square class with size"""
     def __init__(self, size=0):
         """Initializes the data"""
         if type(size) is not int:
