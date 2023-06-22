@@ -53,10 +53,12 @@ if __name__ == "__main__":
             clear_answers(x)
             if rejects(x, y):
                 a[x][1] = y
-                if (x == n - 1):  # accepts the solution
+                # accepts the solution
+                if (x == n - 1):
                     print(a)
                 else:
-                    nqueens(x + 1)  # moves on to next x value to continue
+                    # moves onto the next x value
+                    nqueens(x + 1)
 
     # start the recursive process at x = 0
     nqueens(0)
