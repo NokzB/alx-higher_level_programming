@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-"""Backtracking Program to print the coordinates of n queens
-on an nxn grid in non_attacking positions
 """
+Backtracking nqueens program that prints coordinates of n queens
+on an nxn grid in non-attacking positions
+"""
+
 
 import sys
 
@@ -15,7 +17,7 @@ if __name__ == "__main__":
         exit(1)
     n = int(sys.argv[1])
     if n < 4:
-        print("N Must be at least 4")
+        print("N must be at least 4")
         exit(1)
 
     # initializes the answer list
@@ -23,40 +25,38 @@ if __name__ == "__main__":
         a.append([i, None])
 
     def exists(y):
-        """Checks if the queen does not already exists in that y value"""
+        """check that a queen does not already exist in that y value"""
         for x in range(n):
             if y == a[x][1]:
                 return True
         return False
 
-    def reject_sol(x, y):
-        """determines whether to accept or reject the solution"""
+    def rejects(x, y):
+        """determines whether to reject the solution or not"""
         if (exists(y)):
             return False
         i = 0
-        while (i < x):
+        while(i < x):
             if abs(a[i][1] - y) == abs(i - x):
                 return False
             i += 1
-            return True
+        return True
 
-    def clear_answer(x):
-        """clears the answers from where it fails"""
+    def clear_answers(x):
+        """clears all the answers from the point of failure"""
         for i in range(x, n):
             a[i][1] = None
 
     def nqueens(x):
-        """backtracking function to find solution"""
+        """backtracking function to find the solutions"""
         for y in range(n):
-            clear_answer(x)
-            if reject_sol(x, y):
+            clear_answers(x)
+            if rejects(x, y):
                 a[x][1] = y
-                # accepts solution
-                if (x == n - 1):
+                if (x == n - 1):  # accepts the solution
                     print(a)
                 else:
-                    # moves onto the next x value to continue
-                    nqueens(x + 1)
+                    nqueens(x + 1)  # moves on to next x value to continue
 
-    # starts the process at x = 0
+    # start the recursive process at x = 0
     nqueens(0)
