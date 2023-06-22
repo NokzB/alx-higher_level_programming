@@ -24,8 +24,8 @@ if __name__ == "__main__":
     for i in range(n):
         a.append([i, None])
 
-    def exists(y):
-        """check that a queen does not already exist in that y value"""
+    def check_exists(y):
+        """checks that a queen does not already exist in that y value"""
         for x in range(n):
             if y == a[x][1]:
                 return True
@@ -33,7 +33,7 @@ if __name__ == "__main__":
 
     def rejects(x, y):
         """determines whether to reject the solution or not"""
-        if (exists(y)):
+        if (check_exists(y)):
             return False
         i = 0
         while(i < x):
@@ -48,7 +48,7 @@ if __name__ == "__main__":
             a[i][1] = None
 
     def nqueens(x):
-        """backtracking function to find the solutions"""
+        """backtracking function to find solution"""
         for y in range(n):
             clear_answers(x)
             if rejects(x, y):
@@ -60,5 +60,5 @@ if __name__ == "__main__":
                     # moves onto the next x value
                     nqueens(x + 1)
 
-    # start the recursive process at x = 0
+    # starts the process at position x = 0
     nqueens(0)
