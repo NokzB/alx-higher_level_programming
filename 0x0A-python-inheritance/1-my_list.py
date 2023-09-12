@@ -2,7 +2,7 @@
 """Defines a class that will inherit from the list"""
 
 
-class MyList():
+class MyList(list):
     """Prints a sorted list in ascending order for the built-in list class"""
     def print_sorted(self):
         """prints a list sorted in ascending order"""
