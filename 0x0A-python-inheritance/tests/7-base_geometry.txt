@@ -6,24 +6,57 @@ Using ``BaseGeometry``
 -----------------------------------------
 
 Importing the class from module
->>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
------------------------------------------
 
 case 1: trying to print the area
->>> b_geo = BaseGeometry()
->>> b_geo.area()
-Traceback (most recent call):
-    ...
-    Exception: area() is not implemented
+	>>> b_geo = BaseGeometry()
+	>>> b_geo.area()
+	Traceback (most recent call last):
+		...
+	Exception: area() is not implemented
 
----------------------------------------
 
 case 2: passing a non-integer argument
->>> b_geo = BaseGeometry()
->>> b_geo.integer_validator("name", "5")
-Traceback (most recent call):
-    ...
-    TypeError: name must be an integer
+	>>> b_geo = BaseGeometry()
+	>>> b_geo.integer_validator("name", "5")
+	Traceback (most recent call last):
+		...
+	TypeError: name must be an integer
 
----------------------------------------
+
+case 3: passing a negative value
+	>>> b_geo = BaseGeometry()
+	>>> b_geo.integer_validator("name", -8)
+	Traceback (most recent call last):
+		...
+	ValueError: name must be greater than 0
+
+
+case 4: trying to pass zero
+	>>> b_geo = BaseGeometry()
+	>>> b_geo.integer_validator("name", 0)
+	Traceback (most recent call last):
+		...
+	ValueError: name must be greater than 0
+
+
+case 5: trying to pass a positive value
+	>>> b_geo = BaseGeometry()
+	>>> b_geo.integer_validator("name", 8)
+
+
+case 6: trying to print the area
+	>>> b_geo = BaseGeometry()
+	>>> b_geo.area()
+	Traceback (most recent call last):
+		...
+	Exception: area() is not implemented
+
+
+case 7: trying to pass one argument to the function
+	>>> b_geo = BaseGeometry()
+	>>> b_geo.integer_validator("name")
+	Traceback (most recent call last):
+		...
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
