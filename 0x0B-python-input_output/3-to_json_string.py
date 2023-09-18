@@ -8,4 +8,4 @@ def to_json_string(my_obj):
     Arguments:
         My_obj: The object to serialize
     """
-    return json.dumps(my_obj)
+    return json.dump(my_obj)
