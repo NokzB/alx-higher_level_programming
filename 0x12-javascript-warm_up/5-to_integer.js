@@ -7,5 +7,5 @@ const input = process.argv[2];
 if (!isNaN(parseInt(input))) {
   console.log('My number:', parseInt(input));
 } else {
-  console.log('Not a Number');
+  console.log('Not a number');
 }
