@@ -2,8 +2,10 @@
 
 // Script to print <My Number: "number"> if first arg can be converted to int.
 
-if (!isNaN(parseInt(process.argv[2]))) {
-  console.log('My number:', parseInt(process.argv[2]));
+const input = process.argv[2];
+
+if (!isNaN(parseInt(input))) {
+  console.log('My number:', parseInt(input));
 } else {
   console.log('Not a Number');
 }
